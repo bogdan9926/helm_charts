@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: envmap
+data:
+  RabbitMQ__HostName: rabbitmq
+  RabbitMQ__Port: "5672"
+  RabbitMQ__UserName: root
+  RabbitMQ__Exchange__Name: corpool
+  RabbitMQ__Exchange__Queues__0__Name: queue
+  RabbitMQ__Exchange__Queues__0__RoutingKeys__0: routing
+  Mongo__Host: mongo-mongodb
+  Mongo__Port: "27017"
+  Mongo__Username: root
+  Mongo__DatabaseName: CorPool
+  Redis__HostName: redis-master
+  Redis__Port: "6379"
+  NODE_ENV: development
+  ASPNETCORE_ENVIRONMENT: Development
+  BACKEND_LOCAL_ADDRESS: release-corpool-backend
+  FRONTEND_LOCAL_ADDRESS: release-corpool-frontend
+  MONGODB_ADVERTISED_HOSTNAME: mongo-mongodb
