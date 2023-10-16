@@ -1,4 +1,0 @@
-global:
-  redis:
-    password: root
-architecture: standalone
