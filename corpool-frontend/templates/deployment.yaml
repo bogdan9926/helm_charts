@@ -28,20 +28,20 @@ spec:
             - configMapRef:
                 name: envmap
           env:
-            - name: RabbitMQ__Password
-              valueFrom:
-                secretKeyRef:
-                  name: secretmap
-                  key: RabbitMQ__Password
             - name: Mongo__Password
               valueFrom:
                 secretKeyRef:
-                  name: secretmap
-                  key: Mongo__Password
+                  name: mongo-password-secret
+                  key: mongodb-root-password
             - name: Redis__Password
               valueFrom:
                 secretKeyRef:
-                  name: secretmap
-                  key: Redis__Password
+                  name: redis-password-secret
+                  key: redis-password
+            - name: RabbitMQ__Password
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-password-secret
+                  key: rabbitmq-password
           ports:
             - containerPort:  {{ .Values.service.port }}
